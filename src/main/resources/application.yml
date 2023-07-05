@@ -1,0 +1,22 @@
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MariaDB106Dialect
+  datasource:
+    master:
+      hikari:
+        driver-class-name: org.mariadb.jdbc.Driver
+        jdbc-url: jdbc:mariadb://dev-db-1.cym4iarmfcfz.ap-northeast-2.rds.amazonaws.com:3306/example?characterEncoding=UTF-8&serverTimezone=Asia/Seoul
+        read-only: false
+        username: admin
+        password: lldj123414
+    slave:
+      hikari:
+        driver-class-name: org.mariadb.jdbc.Driver
+        jdbc-url: jdbc:mariadb://dev-db-2.cym4iarmfcfz.ap-northeast-2.rds.amazonaws.com:3306/example?characterEncoding=UTF-8&serverTimezone=Asia/Seoul
+        read-only: true
+        username: admin
+        password: lldj123414
